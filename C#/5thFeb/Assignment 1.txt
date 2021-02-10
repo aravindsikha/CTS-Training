@@ -1,0 +1,25 @@
+/////-----------------------ASSIGNMENT 1----------
+using System;
+//// System is like it is like a library which is having the data types of the program
+    class Program
+    {
+    // class is mandatory in the project
+        static void Main()
+        {
+        int x = 10;
+        int y = 20; 
+        int z = 30;
+        Console.WriteLine("Adding Three Numbers are x ,y and z  is\n" + (x + y + z));
+       Console.WriteLine("multiplying three numbers x,y and z is \n" + (x * y * z));
+        }
+        int id = 154;
+        int salary = 25000;
+        string name = "Aravind";
+        string address = "vijayawada, AP";
+        Console.WriteLine("Welcome " + name + ", Your Details are \n");
+        Console.WriteLine("Your id : " + id);
+        Console.WriteLine("Your Salary is : " + salary);
+        Console.WriteLine("Your Address is : " + address);
+
+
+   }

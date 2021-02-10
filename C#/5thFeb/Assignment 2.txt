@@ -1,0 +1,116 @@
+using System;
+
+namespace assessment
+{
+//--------------------  2.ADDING 3 NUMBERS------
+    class adding
+    {
+        static void Main()
+        {
+            int i, j, k,sum;
+            Console.WriteLine("enter the three numbers to Add \n");
+            i = Convert.ToInt16(Console.ReadLine());
+            j = Convert.ToInt16(Console.ReadLine());
+            k = Convert.ToInt16(Console.ReadLine());
+            sum = i + j + k;
+            Console.WriteLine("addintion of three numbers is " + sum);
+ 
+
+        }
+    }
+/// ----------------3.PRINT 20 NATURAL NUMBERS----------
+ class Program
+    {
+        static void Main()
+        {
+            int n,sum = 0;
+            float avg;
+            Console.WriteLine("enter number\n");
+            n = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Printing the all natural numbers upto 20\n");
+            while (n <= 20)
+            {
+                Console.WriteLine(n);
+                sum += n;
+                if (n == 20)
+                {
+                    avg = (float) sum / 20;
+                    Console.WriteLine("avg of first 20 natural numbers is " + avg);
+                }
+                n++;
+            }
+            
+
+        }
+    }
+//----------4.FINDING PRIME  NUMBER-----------
+    class prime
+    {
+        static void Main()
+        {
+            int p,k=0;
+            Console.WriteLine("enter p");
+            p = Convert.ToInt16(Console.ReadLine());
+            for(int i = 1; i <= p; i++)
+            {
+                if (p % i == 0)
+                    k++;
+            }
+            if (k == 2)
+                Console.WriteLine("entered number is prime");
+            else
+                Console.WriteLine("entered num is not a prime");
+        }
+    }
+//---------------------5.PRINT EVEN NUMBERS----------------------
+class even
+    {
+        static void Main()
+        {
+            int num;
+            Console.WriteLine("enter the number\n");
+            num = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("even nums from "+ num);
+            while (num <= 50)
+            {
+                if (num % 2 == 0)
+                {
+                    Console.WriteLine(num);
+                }
+                num++;
+            }
+        }
+/////--------------6.TO PRINT MULTIPLICATION TABLE------
+class table
+    {
+        static void Main()
+        {
+             int i, n;
+            Console.WriteLine("Enter number \n");
+            n = Convert.ToInt16(Console.ReadLine());
+
+            for (i = 1; i <= 10; i++)
+            {
+               Console.Write("{0} X {1} = {2} \n", n, i, n * i);
+            }
+         
+        }
+    }
+
+    }
+7.difference between ToIn16, ToInt32 , ToByte and other methods available
+      The Convert.ToInt16() method returns the 16-bit integer e.g. short, the Convert.ToInt32() returns 32-bit integers e.g. int and the Convert.ToInt64() returns the 64-bit integer e.g. long. */
+
+ 8. What is System in the program. What are Console and Convert? What are Write, WriteLine , ReadLine and ToBy
+      system  : system is a namespace, namespace is logical collection of related classes
+      Console : Console is a class which is present in the namespace
+      Write, WriteLine :The most common method to output something in C# is WriteLine() and Write().
+                        The difference is that WriteLine() prints the output on a new line each time, while Write() prints on the same line
+      Convert : this is used to convert one data type to other data type
+      ReadLine : it is a input statement to take values
+      ToByte : it is used to conver data into bytes */
+
+ 9. Is it mandatory to have a class in the project
+ 10. Why is static added to Main() method?
+      A main method is static since it is available to run when the C# program starts. It is the entry point of the program and runs without even creating an instance of the class.
+}
