@@ -1,0 +1,128 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace demo
+{
+    class employee
+    {
+        int empid;
+        string name;
+        public static string manager;
+        public static string dept;
+        double basic_salary;
+        int exp;
+        public static string company_name;
+        public static string company_address;
+        double DA, HRA, PF, net_salary;
+        public static void getmanagerdetails()
+        {
+            manager = "Shiela";
+            Console.WriteLine("Manager name is :" + manager);
+        }
+
+        public static void getdepartmentdetails()
+        {
+            dept = "Digital";
+            Console.WriteLine("Department name is :" + dept);
+        }
+        public static void getcomapanyname()
+        {
+            company_name = "Cognizant";
+            Console.WriteLine("Company name is :" + company_name);
+        }
+        public static void getcompanyaddress()
+        {
+            company_address = "Chennai";
+            Console.WriteLine("company address is :" + company_address);
+        }
+        public void getemployeedetails()
+        {
+            Console.WriteLine("enter employee ID");
+            empid = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("enter Name of the employee");
+            name = Console.ReadLine();
+            Console.WriteLine("enter basic salary");
+            basic_salary = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter exp of the employee");
+            exp = Convert.ToInt16(Console.ReadLine());
+        }
+        public void calculatenetsalary()
+        {
+            if (exp <= 10)
+            {
+                DA = (1.9 * basic_salary) / 100;
+                HRA = (2.0 * basic_salary) / 100;
+                PF = 1200;
+            }
+            else if (exp > 5 && exp <= 7)
+            {
+                DA = (4.1 * basic_salary) / 100;
+                HRA = (3.8 * basic_salary) / 100;
+                PF = 1800;
+            }
+            else if (exp > 7 && exp <= 10)
+            {
+                DA = (7 * basic_salary) / 100;
+                HRA = (6.5 * basic_salary) / 100;
+                PF = 4100;
+            }
+            else if (exp > 10)
+            {
+                DA = (10 * basic_salary) / 100;
+                HRA = (8.5 * basic_salary) / 100;
+                PF = 6200;
+            }
+
+            net_salary = (basic_salary + DA + HRA) - PF;
+        }
+
+        public void displayemployeedetails()
+
+        {
+            Console.WriteLine("employee Id is :" + empid);
+            Console.WriteLine("employee Name : " + name);
+            Console.WriteLine("basic salary is :" + basic_salary);
+            Console.WriteLine("DA is :" + DA);
+            Console.WriteLine("HRA is :" + HRA);
+            Console.WriteLine("PF is :" + PF);
+            Console.WriteLine("Net salary is : " + net_salary);
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace demo
+{
+    class employeemain
+    {
+       // static List<employee> employeelist; 
+        static void Main()
+        {
+            int c = 0;
+            employee.getmanagerdetails();
+            employee.getdepartmentdetails();
+            employee.getcomapanyname();
+            employee.getcompanyaddress();
+            employee employee1 = new employee();
+            employee[] em = new employee[5];
+            for(int i = 0; i < 5; i++)
+            {
+                employee1.getemployeedetails();
+                employee1.calculatenetsalary();
+                employee1.displayemployeedetails();
+                c++;
+
+            }
+            Console.WriteLine("the no.of emplloyees are " + c);
+        }
+    }
+}
